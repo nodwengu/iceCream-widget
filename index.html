@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Ice Cream Widget</title>
+
+  <!-- CSS  -->
+  <link href="css/animate.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+</head>
+<body>
+
+    <header>
+         <script type="text/x-handlebars-template" class="flavoursTemplate">
+            <option value="" disabled selected>Choose your Flavour</option>
+            {{#each flavours}}
+               <option class='flavourOption' value='{{name}}'> {{name}} </option>
+            {{/each}}
+         </script>
+
+         <script type="text/x-handlebars-template" class="containersTemplate">
+            <option value="" disabled selected>Choose your </option>
+            {{#each containerTpes}}
+               <option class='containerOption' value='{{name}}'> {{name}} </option>
+            {{/each}}
+         </script>
+
+         <script type="text/x-handlebars-template" class="toppingsTemplate">
+            {{#each toppings}}
+            <label>
+               <input type="checkbox" value="{{name}}" class="checkboxes">
+               <span>{{name}}</span>
+            </label><br>
+            {{/each}}
+         </script>
+      </header>
+
+    <div class="container" style="width: 60%;">
+        <div class="row card">
+           <div class="error" style="display:none">
+               <h5 style="color:red">Neeed to add input value</h5>
+           </div>
+                <h4 class="center">Buy Ice Cream</h6>
+            <div class="col s12 m12">
+               <div class="option-group " style="display:flex">
+                     <span style="flex:1">Flavour</span>
+                     <select class="browser-default flavourOptions" style="flex:1">
+                       
+                        
+                     </select>
+                  </div>
+                  <div class="option-group " style="display:flex; margin: 30px 0 30px 0">
+                     <span style="flex:1">Container Type</span>
+                     <select class="browser-default containerOptions" style="flex:1">
+                       
+                       
+                     </select>
+                  </div>
+               <div class="">
+                     <h5 class="center">Select your Topping:</h5>
+                     <div class="boxContainer">
+                       
+                     </div>
+               </div>
+               <div style="margin:27px 0 27px 0"><h5>Price Total: R<span class="price">0.00</span></h5></div>
+
+               <div class="card-action getPrice">
+                  <a class="waves-effect waves-light btn-small right">Get Price</a>
+               </div>
+                          
+            </div>
+        </div>  
+   </div>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  <script src="js/buyIceCream.js"></script>
+  <script src="js/script.js"></script>
+
+  </body>
+</html>
